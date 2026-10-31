@@ -5,17 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#4f46e5">
 
-<!-- ============ TODO 1：改成你的 App 信息（会显示在浏览器标签和分享卡片） ============ -->
 <title>泰语词卡 · 每天认识一个新泰语</title>
-<meta name="description" content="泰语词卡是一款极简的泰语发音学习应用，支持 Markdown、双向链接与全文搜索，数据全部保存在你自己的设备上。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="泰语词卡 · 每天认识一个新泰语">
-<meta property="og:description" content="极简本地笔记，支持 Markdown 与双向链接，数据只属于你自己。">
-<meta property="og:image" content="og-image.png">
+<meta name="description" content="泰语词卡是一款极简的泰语学习应用，支持单词卡片记忆与纯正发音，所有数据保存在本地设备。">
 <link rel="icon" href="icon.png">
 
 <style>
-/* ============ 全局配色：改这几个变量就能换整体风格 ============ */
 :root{
   --primary:#4f46e5;
   --primary-dark:#4338ca;
@@ -38,8 +32,8 @@ a{color:inherit}
 img{max-width:100%;display:block}
 .container{width:100%;max-width:var(--max);margin:0 auto;padding:0 20px}
 
-/* ============ 顶部导航 ============ */
-.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);background:#fff\9;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+/* 导航 */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:62px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;text-decoration:none}
 .brand .mark{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:grid;place-items:center;color:#fff;font-size:16px}
@@ -48,114 +42,65 @@ img{max-width:100%;display:block}
 .nav-links a:hover{color:var(--primary)}
 @media(max-width:720px){.nav-links{display:none}}
 
-/* ============ 按钮 ============ */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  height:52px;padding:0 28px;border-radius:999px;font-size:16px;font-weight:600;
-  text-decoration:none;border:1px solid transparent;cursor:pointer;transition:.22s;
-}
+/* 按钮 */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 28px;border-radius:999px;font-size:16px;font-weight:600;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:.22s;}
 .btn-primary{background:var(--primary);color:#fff;box-shadow:0 10px 24px -8px rgba(79,70,229,.65)}
 .btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px)}
 .btn-ghost{background:#fff;color:var(--text);border-color:var(--line)}
 .btn-ghost:hover{border-color:var(--primary);color:var(--primary)}
 
-/* ============ Hero ============ */
-.hero{
-  padding:80px 0 70px;text-align:center;
-  background:radial-gradient(120% 90% at 50% 0%,#eef2ff 0%,#ffffff 62%);
-}
-.app-icon{
-  width:96px;height:96px;border-radius:26px;margin:0 auto 26px;
-  background:linear-gradient(135deg,#6366f1,#8b5cf6);
-  display:grid;place-items:center;font-size:44px;
-  box-shadow:0 20px 42px -14px rgba(79,70,229,.6);
-}
+/* 首屏 */
+.hero{padding:80px 0 70px;text-align:center;background:radial-gradient(120% 90% at 50% 0%,#eef2ff 0%,#ffffff 62%);}
+.app-icon{width:96px;height:96px;border-radius:26px;margin:0 auto 26px;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:grid;place-items:center;font-size:44px;box-shadow:0 20px 42px -14px rgba(79,70,229,.6);color:#fff;}
 .app-icon img{width:100%;height:100%;border-radius:26px;object-fit:cover}
 .hero h1{font-size:clamp(30px,5.6vw,50px);line-height:1.2;letter-spacing:-.02em;font-weight:800}
 .hero .sub{max-width:620px;margin:18px auto 0;font-size:clamp(15px,2.4vw,18px);color:var(--muted)}
 .hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px}
 .hero-meta{margin-top:18px;font-size:13px;color:var(--muted)}
-.badge{
-  display:inline-flex;align-items:center;gap:6px;margin-bottom:20px;
-  padding:6px 14px;border-radius:999px;background:var(--primary-light);
-  color:var(--primary);font-size:13px;font-weight:600;
-}
+.badge{display:inline-flex;align-items:center;gap:6px;margin-bottom:20px;padding:6px 14px;border-radius:999px;background:var(--primary-light);color:var(--primary);font-size:13px;font-weight:600;}
 
-/* ============ 通用区块 ============ */
+/* 区块 */
 section{padding:72px 0}
 .sec-head{text-align:center;margin-bottom:46px}
 .sec-head h2{font-size:clamp(24px,4vw,34px);font-weight:800;letter-spacing:-.01em}
 .sec-head p{margin-top:12px;color:var(--muted);font-size:16px}
 .soft{background:var(--bg-soft)}
 
-/* ============ 功能 ============ */
+/* 功能卡片 */
 .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
-.card{
-  background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 22px;
-  transition:.25s;
-}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 22px;transition:.25s;}
 .card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -22px rgba(15,23,42,.35);border-color:#c7d2fe}
 .card .ico{font-size:26px;margin-bottom:14px}
 .card h3{font-size:17px;margin-bottom:8px;font-weight:700}
 .card p{font-size:14.5px;color:var(--muted)}
 
-/* ============ 截图 ============ */
-.shots{
-  display:flex;gap:16px;overflow-x:auto;padding:6px 4px 22px;
-  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
-}
-.shots::-webkit-scrollbar{height:6px}
-.shots::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:99px}
-.shot{
-  flex:0 0 auto;width:196px;height:392px;border-radius:22px;overflow:hidden;
-  background:#eef2f7;border:1px solid var(--line);scroll-snap-align:center;
-  box-shadow:0 14px 34px -22px rgba(15,23,42,.5);
-}
-.shot img{width:100%;height:100%;object-fit:cover}
-
-/* ============ 下载 ============ */
+/* 下载区 */
 .dl-wrap{display:grid;grid-template-columns:1.4fr .9fr;gap:24px;align-items:stretch}
 @media(max-width:860px){.dl-wrap{grid-template-columns:1fr}}
 .dl-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 @media(max-width:560px){.dl-grid{grid-template-columns:1fr}}
-.dl-card{
-  background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 22px;text-align:center;
-}
+.dl-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 22px;text-align:center;}
 .dl-card .ico{font-size:34px;margin-bottom:12px}
 .dl-card h3{font-size:17px;margin-bottom:4px}
 .dl-card .req{font-size:13px;color:var(--muted);margin-bottom:18px}
 .dl-card .btn{width:100%;height:48px;font-size:15px;padding:0 16px}
 .dl-card .meta{margin-top:12px;font-size:12.5px;color:var(--muted)}
-.qr-card{
-  background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 22px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;
-}
+.qr-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 22px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;}
 .qr-card img{width:150px;height:150px;border-radius:10px;background:#f1f5f9}
 .qr-card p{font-size:13.5px;color:var(--muted)}
 
-/* ============ FAQ ============ */
+/* FAQ */
 .faq-item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:12px}
-.faq-item summary{
-  cursor:pointer;font-weight:600;font-size:15.5px;list-style:none;
-  display:flex;align-items:center;justify-content:space-between;gap:14px;
-}
+.faq-item summary{cursor:pointer;font-weight:600;font-size:15.5px;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:14px;}
 .faq-item summary::-webkit-details-marker{display:none}
 .faq-item summary::after{content:"+";color:var(--muted);font-size:20px;line-height:1;transition:.2s}
 .faq-item[open] summary::after{content:"−"}
 .faq-item p{margin-top:12px;color:var(--muted);font-size:14.5px}
 
-/* ============ 页脚 ============ */
 footer{border-top:1px solid var(--line);padding:36px 0;text-align:center;font-size:13.5px;color:var(--muted)}
-footer a{text-decoration:none}
-footer a:hover{color:var(--primary)}
 .footer-links{margin-top:10px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 
-/* ============ 微信提示条 ============ */
-.wx-tip{
-  display:none;position:fixed;left:16px;right:16px;bottom:16px;z-index:99;
-  background:#111827;color:#fff;border-radius:14px;padding:14px 18px;font-size:14px;
-  box-shadow:0 16px 40px -12px rgba(0,0,0,.5);
-}
+.wx-tip{display:none;position:fixed;left:16px;right:16px;bottom:16px;z-index:99;background:#111827;color:#fff;border-radius:14px;padding:14px 18px;font-size:14px;box-shadow:0 16px 40px -12px rgba(0,0,0,.5);}
 .wx-tip b{color:#fbbf24}
 
 @media(max-width:640px){
@@ -169,224 +114,152 @@ footer a:hover{color:var(--primary)}
 </head>
 <body>
 
-<!-- ============ 导航 ============ -->
 <header class="nav">
   <div class="container nav-inner">
     <a class="brand" href="#top">
-      <span class="mark">✦</span>
-      <span>星图笔记</span>
+      <span class="mark">泰</span>
+      <span>泰语词卡</span>
     </a>
     <nav class="nav-links">
       <a href="#features">功能</a>
-      <a href="#screenshots">截图</a>
       <a href="#download">下载</a>
       <a href="#faq">常见问题</a>
     </nav>
   </div>
 </header>
 
-<!-- ============ 首屏 ============ -->
 <section class="hero" id="top">
   <div class="container">
-    <span class="badge">v1.0.0 · 全新发布</span>
-
-    <!-- TODO 2：App 图标。有图就用 <img src="icon.png" alt="App 图标"> 替换掉 emoji -->
-    <div class="app-icon">✦</div>
-
-    <h1>让每一个灵感<br>都不会丢失</h1>
+    <span class="badge">v2.0.5 · 全新发布</span>
+    <div class="app-icon">泰</div>
+    <h1>每天认识<br>一个新泰语</h1>
     <p class="sub">
-      星图笔记是一款极简的本地笔记应用，支持 Markdown、双向链接与全文搜索。
-      所有数据都保存在你自己的设备上，不上传、不追踪、不联网也能用。
+      泰语词卡是一款极简的泰语学习应用，支持单词卡片记忆与纯正发音。
+      利用碎片时间，随时随地背单词，告别死记硬背。
     </p>
-
     <div class="hero-actions">
-      <!-- TODO 3：主按钮的链接在 JS 的 CONFIG 里统一配置 -->
       <a class="btn btn-primary" id="heroBtn" href="#download">立即下载</a>
       <a class="btn btn-ghost" href="#features">了解更多</a>
     </div>
-
-    <p class="hero-meta">支持 iOS 14+ / Android 7.0+ · 安装包约 28 MB · 完全免费</p>
+    <p class="hero-meta">支持 iOS 14+ / Android 7.0+ · 安装包约 65 MB · 完全免费</p>
   </div>
 </section>
 
-<!-- ============ 功能 ============ -->
 <section id="features">
   <div class="container">
     <div class="sec-head">
-      <h2>为写作者打磨的每一个细节</h2>
-      <p>没有多余的按钮，只有你想要的功能</p>
+      <h2>让学习泰语变得简单</h2>
+      <p>专为中文母语者设计的泰语学习工具</p>
     </div>
-
     <div class="features">
       <div class="card">
-        <div class="ico">⚡</div>
-        <h3>秒开秒记</h3>
-        <p>冷启动 0.4 秒，打开就能写。想记东西的时候，不用等。</p>
+        <div class="ico">🎴</div>
+        <h3>智能卡片</h3>
+        <p>基于艾宾浩斯记忆曲线，科学安排复习，记牢每一个单词。</p>
+      </div>
+      <div class="card">
+        <div class="ico">🔊</div>
+        <h3>纯正发音</h3>
+        <p>提供地道曼谷腔调发音，支持跟读练习，告别哑巴泰语。</p>
+      </div>
+      <div class="card">
+        <div class="ico">📚</div>
+        <h3>场景分类</h3>
+        <p>日常、旅行、购物、工作，按场景分类学习，即学即用。</p>
       </div>
       <div class="card">
         <div class="ico">🔒</div>
-        <h3>数据在你手上</h3>
-        <p>纯本地存储，无需注册登录，不会上传任何内容到服务器。</p>
-      </div>
-      <div class="card">
-        <div class="ico">🔗</div>
-        <h3>双向链接</h3>
-        <p>用 [[双链]] 把零散的想法连成网络，思路自然浮现。</p>
-      </div>
-      <div class="card">
-        <div class="ico">🔍</div>
-        <h3>毫秒级搜索</h3>
-        <p>几千篇笔记也能瞬间命中，支持中文分词与模糊匹配。</p>
-      </div>
-      <div class="card">
-        <div class="ico">🌙</div>
-        <h3>深色模式</h3>
-        <p>跟随系统自动切换，深夜写作不刺眼。</p>
-      </div>
-      <div class="card">
-        <div class="ico">📦</div>
-        <h3>一键导出</h3>
-        <p>随时导出为 Markdown / PDF，你的内容永远属于你。</p>
+        <h3>数据本地化</h3>
+        <p>学习记录纯本地存储，无需注册登录，不追踪任何隐私。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 截图 ============ -->
-<section class="soft" id="screenshots">
-  <div class="container">
-    <div class="sec-head">
-      <h2>界面预览</h2>
-      <p>左右滑动查看更多</p>
-    </div>
-
-    <!-- TODO 4：把 screenshot-1.png ~ 3.png 换成你自己的截图（建议宽度 800px 以上） -->
-    <div class="shots">
-      <div class="shot"><img src="screenshot-1.png" alt="首页截图"></div>
-      <div class="shot"><img src="screenshot-2.png" alt="编辑页截图"></div>
-      <div class="shot"><img src="screenshot-3.png" alt="搜索页截图"></div>
-      <div class="shot"><img src="screenshot-4.png" alt="设置页截图"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 下载 ============ -->
-<section id="download">
+<section class="soft" id="download">
   <div class="container">
     <div class="sec-head">
       <h2>选择你的设备下载</h2>
-      <p>iOS 通过 App Store 安装，Android 直接下载 APK 安装包</p>
+      <p>iOS 通过 App Store 安装，Android 直接下载 APK</p>
     </div>
-
     <div class="dl-wrap">
       <div class="dl-grid">
-        <!-- 安卓 -->
         <div class="dl-card">
           <div class="ico">🤖</div>
           <h3>Android 版</h3>
           <p class="req">适用于 Android 7.0 及以上</p>
-          <!-- TODO 5：把 href 换成你的 APK 真实地址 -->
-          <a class="btn btn-primary" id="androidBtn" href="app-release.apk" download>下载 APK</a>
-          <p class="meta">版本 v1.0.0 · 28 MB · 2025-01-01 更新</p>
+          <a class="btn btn-primary" id="androidBtn" href="#" download>下载 APK</a>
+          <p class="meta">版本 v2.0.5 · 完全免费</p>
         </div>
-
-        <!-- iOS -->
         <div class="dl-card">
-          <div class="ico"></div>
+          <div class="ico">📱</div>
           <h3>iPhone / iPad 版</h3>
           <p class="req">适用于 iOS 14.0 及以上</p>
-          <!-- TODO 6：换成你的 App Store 链接；如果还没上架，把 href 改成 mailto 或隐藏这张卡 -->
-          <a class="btn btn-primary" id="iosBtn" href="https://apps.apple.com/app/id0000000000">前往 App Store</a>
-          <p class="meta">版本 v1.0.0 · 2025-01-01 更新</p>
+          <a class="btn btn-primary" id="iosBtn" href="#">前往 App Store</a>
+          <p class="meta">版本 v2.0.5 · 敬请期待</p>
         </div>
       </div>
-
-      <!-- 二维码 -->
       <div class="qr-card">
-        <!-- TODO 7：用草料二维码等工具，把本页网址生成二维码，保存为 qrcode.png -->
         <img src="qrcode.png" alt="扫码下载二维码">
-        <p>手机扫码，直接打开本页下载</p>
+        <p>手机扫码，直接打开本页</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 常见问题 ============ -->
 <section class="soft" id="faq">
   <div class="container" style="max-width:820px">
     <div class="sec-head">
       <h2>常见问题</h2>
     </div>
-
     <details class="faq-item" open>
       <summary>Android 安装时提示“禁止安装未知来源应用”怎么办？</summary>
-      <p>点击提示框中的“设置”，把“允许来自此来源的应用”开关打开，然后返回重新点击安装即可。这是 Android 系统对非应用商店来源安装包的默认保护，本安装包无任何风险。</p>
+      <p>点击提示框中的“设置”，把“允许来自此来源的应用”开关打开，然后返回重新点击安装即可。</p>
     </details>
-
     <details class="faq-item">
       <summary>在微信里点下载没反应？</summary>
-      <p>微信内置浏览器出于安全策略，会拦截 APK 文件下载。请点击右上角“···”，选择“在浏览器中打开”，再点击下载按钮即可。</p>
+      <p>微信内置浏览器会拦截 APK 下载。请点击右上角“···”，选择“在浏览器中打开”，再点击下载按钮即可。</p>
     </details>
-
     <details class="faq-item">
       <summary>iPhone 可以直接安装吗？</summary>
-      <p>iOS 系统的限制比较严格，必须通过 App Store 安装。如果暂时搜不到，可能是所在地区尚未上架，请通过下方邮箱联系我们获取 TestFlight 测试资格。</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>升级新版本会丢失数据吗？</summary>
-      <p>不会。覆盖安装会保留全部本地数据。请不要先卸载旧版本再安装新版本，否则数据会一并清除。</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>会收集我的笔记内容吗？</summary>
-      <p>不会。App 完全离线运行，笔记只保存在设备本地。关于数据处理的完整说明，请查看<a href="#" style="color:var(--primary)">隐私政策</a>。</p>
+      <p>iOS 系统的限制比较严格，必须通过 App Store 安装。目前正在审核中，请耐心等待。</p>
     </details>
   </div>
 </section>
 
-<!-- ============ 页脚 ============ -->
 <footer>
   <div class="container">
-    <p>© 2025 星图工作室 · 保留所有权利</p>
+    <p>© 2026 泰语词卡 · 保留所有权利</p>
     <div class="footer-links">
-      <a href="#">隐私政策</a><span>·</span>
-      <a href="#">用户协议</a><span>·</span>
       <a href="mailto:hello@example.com">联系我们</a>
     </div>
   </div>
 </footer>
 
-<!-- 微信提示条 -->
 <div class="wx-tip" id="wxTip">
   微信内无法直接下载安装包，请点击右上角 <b>···</b> 选择 <b>在浏览器中打开</b>
 </div>
 
 <script>
-/* ==================================================================
-   TODO 8：在这里统一配置下载地址（改完上面的 href 就不用管这里）
-   ================================================================== */
+// =========================================================
+// 已经为你填好真实的 APK 下载链接了！不用再改这里！
+// =========================================================
 var CONFIG = {
-  android: 'sha256:901382cc13ada48d3c36c362fea7df359ce860ec16f88a4e745bdfbae9509c8e'                              // APK 地址，可以是相对路径或完整网址
-  ios: 'https://apps.apple.com/app/id0000000000'                // App Store 链接，没有就填 ''
+  android: 'https://github.com/dairosen77-alt/qqwa/releases/download/V2.0.5/thaiwords-2.0.5.apk', 
+  ios: '' 
 };
 
 (function () {
   var ua = navigator.userAgent.toLowerCase();
   var isWechat  = /micromessenger/.test(ua);
   var isQQ      = /\sqq\//.test(ua);
-  var isIOS     = /iphone|ipad|ipod/.test(ua) ||
-                  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var isIOS     = /iphone|ipad|ipod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   var isAndroid = /android/.test(ua);
 
-  /* 1. 微信 / QQ 内置浏览器：无法直接下载，给出提示 */
   if (isWechat || isQQ) {
-    var tip = document.getElementById('wxTip');
-    tip.style.display = 'block';
-    setTimeout(function () { tip.style.opacity = '1'; }, 800);
+    document.getElementById('wxTip').style.display = 'block';
   }
 
-  /* 2. 首屏主按钮：按访问设备自动切换文案和链接 */
   var heroBtn = document.getElementById('heroBtn');
   if (isIOS && CONFIG.ios) {
     heroBtn.textContent = '前往 App Store 下载';
@@ -395,12 +268,8 @@ var CONFIG = {
     heroBtn.textContent = '下载 Android 版';
     heroBtn.href = CONFIG.android;
     heroBtn.setAttribute('download', '');
-  } else {
-    heroBtn.textContent = '立即下载';
-    heroBtn.href = '#download';
   }
 
-  /* 3. 如果 iOS 链接为空，把 App Store 按钮置灰并提示 */
   var iosBtn = document.getElementById('iosBtn');
   if (!CONFIG.ios) {
     iosBtn.textContent = '即将上架，敬请期待';
@@ -409,7 +278,6 @@ var CONFIG = {
     iosBtn.removeAttribute('href');
   }
 
-  /* 4. 安卓按钮使用 CONFIG 里的地址（防止上方 href 忘记同步） */
   var androidBtn = document.getElementById('androidBtn');
   if (CONFIG.android) {
     androidBtn.href = CONFIG.android;
